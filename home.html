@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+
+    <script type="text/javascript">
+        function preventBack() { window.history.forward(); }
+        setTimeout("preventBack()", 0);
+        window.onunload = function () { null };
+
+        function startgame() {
+            location.replace("index.html");
+        } 
+    </script>
+
+    <style>
+        body{
+            background-image: url("images/giphy.gif"); 
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="start-game text-center">
+            <h3>Welcome to Fun Maze Game</h3>
+            <button id="start-btn" onclick="startgame()">START</button><br>
+        </div>
+
+        <div class="view-profile text-right">
+            <button id="myBtn">
+                <p id="user-initial"></p>
+            </button>
+        </div>
+
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <div class="profile-icon text-center">
+                    <button>
+                        <p id="user-initial1"></p>
+                    </button>
+                </div>
+                <h5 id="username" class="text-center"></h5>
+                <p id="useremail" class="text-center"></p>
+                <div class="logout text-center">
+                    <button id="logout-btn">LOGOUT</button>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/7.15.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/ui/6.0.1/firebase-ui-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.2/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.1/firebase-analytics.js"></script>
+    <script src='firebase.js'></script>
+    <script src="index.js"></script>
+</body>
+
+</html>
